@@ -116,7 +116,7 @@ public final class Launcher extends Activity implements View.OnClickListener, On
     static final String EXTRA_CUSTOM_WIDGET = "custom_widget";
     static final String SEARCH_WIDGET = "search_widget";
 
-    static final int WALLPAPER_SCREENS_SPAN = 2;
+    static final int WALLPAPER_SCREENS_SPAN = 1;
     static final int SCREEN_COUNT = 3;
     static final int DEFAULT_SCREN = 1;
     static final int NUMBER_CELLS_X = 4;
@@ -341,7 +341,7 @@ public final class Launcher extends Activity implements View.OnClickListener, On
         WallpaperManager wpm = (WallpaperManager)getSystemService(WALLPAPER_SERVICE);
 
         Display display = getWindowManager().getDefaultDisplay();
-        boolean isPortrait = display.getWidth() < display.getHeight();
+        boolean isPortrait = display.getWidth() > display.getHeight();
 
         final int width = isPortrait ? display.getWidth() : display.getHeight();
         final int height = isPortrait ? display.getHeight() : display.getWidth();
